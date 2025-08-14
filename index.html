@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shadiqah Adil Naufal — Portofolio</title>
+  <meta name="description" content="Portofolio pelajar SMK Negeri 1 Prabumulih jurusan Teknik Kendaraan Ringan." />
+  <!-- Icon Libraries -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f1a;
+      --bg2:#0e1424;
+      --card:#111830;
+      --text:#e6ebff;
+      --muted:#9db0ff;
+      --acc:#4f8cff;
+      --acc2:#8a5bff;
+      --glow: 0 0 24px rgba(79,140,255,.35), 0 0 48px rgba(138,91,255,.25);
+      --radius: 22px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text); background: radial-gradient(1200px 600px at 50% -100px, rgba(79,140,255,.18), transparent),
+                         radial-gradient(800px 400px at 90% 10%, rgba(138,91,255,.18), transparent),
+                         linear-gradient(180deg, #070b13 0%, var(--bg) 100%);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+
+    /* Container */
+    .wrap{max-width:860px; margin:0 auto; padding:18px 16px 120px}
+
+    /* Glass card utility */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+          border:1px solid rgba(255,255,255,.06); border-radius:var(--radius);
+          box-shadow: var(--glow); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+          padding:16px}
+
+    /* Header/Hero */
+    header{
+      position:sticky; top:0; z-index:30; backdrop-filter:saturate(140%) blur(6px);
+      background: linear-gradient(180deg, rgba(14,20,36,.9), rgba(14,20,36,.6));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:10px 14px}
+    .brand{display:flex; gap:10px; align-items:center}
+    .logo{width:36px; height:36px; border-radius:12px; background: linear-gradient(135deg, var(--acc), var(--acc2));
+      display:grid; place-items:center; box-shadow: var(--glow)}
+    .brand b{letter-spacing:.3px}
+    .nav a.btn{padding:10px 14px; border-radius:14px; background:linear-gradient(135deg,var(--acc),var(--acc2));
+               color:#fff; font-weight:600; display:inline-flex; align-items:center; gap:8px}
+
+    .hero{display:grid; grid-template-columns:1fr; gap:16px; padding:18px 16px 6px}
+    .pfp{position:relative}
+    .pfp img{width:128px; height:128px; border-radius:24px; object-fit:cover; border:2px solid rgba(255,255,255,.12); box-shadow: var(--glow)}
+    .status-dot{position:absolute; right:4px; bottom:6px; width:16px; height:16px; border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, #8cff8c, #24d224); border:2px solid var(--bg2); box-shadow:0 0 12px rgba(36,210,36,.7)}
+
+    .title{font-size:1.45rem; font-weight:800; line-height:1.2}
+    .subtitle{color:var(--muted); font-weight:500; margin-top:6px}
+    .type{display:inline-block; min-height:26px; border-right:2px solid rgba(255,255,255,.6); padding-right:6px}
+
+    /* Sections */
+    section{margin-top:18px}
+    section h2{font-size:1.05rem; font-weight:800; margin:0 0 12px; letter-spacing:.3px}
+    .tag{display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); margin:6px 6px 0 0}
+
+    /* About */
+    .about p{margin:8px 0; color:#dbe3ff}
+    .about .meta{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px}
+    .meta .itm{padding:10px; border-radius:14px; background:rgba(79,140,255,.08); border:1px solid rgba(79,140,255,.25)}
+
+    /* Skills */
+    .skills{display:grid; grid-template-columns:repeat(2,1fr); gap:10px}
+    .skill{position:relative; padding:12px; border-radius:16px; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.07); overflow:hidden}
+    .skill b{display:block; font-size:.95rem}
+    .skill small{color:var(--muted)}
+    .meter{height:8px; width:100%; background:rgba(255,255,255,.08); border-radius:999px; margin-top:10px; overflow:hidden}
+    .bar{height:100%; width:0%; background:linear-gradient(90deg, var(--acc), var(--acc2)); box-shadow: var(--glow)}
+
+    /* Hobi */
+    .hobbies{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    .hobby{padding:14px; border-radius:18px; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.07); display:flex; gap:12px; align-items:center}
+    .hobby i{font-size:22px}
+
+    /* Sosmed */
+    .socials{display:grid; grid-template-columns:repeat(2,1fr); gap:10px}
+    .sbtn{display:flex; gap:10px; align-items:center; justify-content:center; padding:12px; border-radius:16px; font-weight:700;
+      border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04)}
+    .sbtn i{font-size:18px}
+
+    /* Bottom Nav */
+    .bnav{position:fixed; bottom:10px; left:50%; transform:translateX(-50%); width:min(560px, 92%);
+          display:grid; grid-template-columns:repeat(4,1fr); gap:10px; z-index:40}
+    .bnav a{padding:12px 10px; border-radius:16px; text-align:center; border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); color:#fff}
+    .bnav a.active{outline:2px solid transparent; background:linear-gradient(135deg, var(--acc), var(--acc2)); box-shadow: var(--glow)}
+
+    /* Reveal animations */
+    .reveal{opacity:0; transform:translateY(16px); transition:.7s cubic-bezier(.2,.8,.2,1)}
+    .reveal.show{opacity:1; transform:none}
+
+    /* Floating shapes */
+    .float{position:absolute; inset:auto; pointer-events:none; z-index:0}
+    .blob{position:absolute; width:200px; height:200px; border-radius:50%; filter:blur(40px); opacity:.35}
+    .blob.b1{background:linear-gradient(45deg,var(--acc),transparent); right:-60px; top:-40px}
+    .blob.b2{background:linear-gradient(45deg,var(--acc2),transparent); left:-60px; bottom:-40px}
+
+    /* Small helpers */
+    .row{display:flex; gap:12px; align-items:center}
+    .muted{color:var(--muted)}
+    .chip{padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1)}
+
+    @media(min-width:700px){
+      .hero{grid-template-columns:auto 1fr; align-items:center}
+      .pfp img{width:150px; height:150px}
+      .skills{grid-template-columns:repeat(3,1fr)}
+      .hobbies{grid-template-columns:repeat(3,1fr)}
+      .socials{grid-template-columns:repeat(3,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="brand">
+        <div class="logo"><i class="ri-tools-fill"></i></div>
+        <div>
+          <b>Shadiqah Adil Naufal</b><br>
+          <small class="muted">SMK Negeri 1 Prabumulih • X TKR 1</small>
+        </div>
+      </div>
+      <a class="btn" href="#sosmed"><i class="ri-send-plane-fill"></i> Kontak</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+
+    <!-- HERO -->
+    <div class="hero card reveal" id="home">
+      <div class="pfp">
+        <!-- Ganti foto di src di bawah -->
+        <img src="https://i.postimg.cc/sfnccjy6/file-000000004100622f90dbb3191817a2d8.png" alt="Foto Profil Shadiqah" loading="lazy">
+        <span class="status-dot" aria-hidden="true"></span>
+      </div>
+      <div>
+        <div class="row"><span class="chip">Shadiqah Adil Naufal</span></div>
+        <h1 class="title">Halo!</h1>
+        <p class="subtitle"> <span class="type" id="typewriter"></span></p>
+        <div class="row muted" style="margin-top:10px">
+          <i class="ri-calendar-2-line"></i>
+          <small>Prabumulih, 13 Desember 2009 • 16 yo.</small>
+        </div>
+      </div>
+      <div class="float">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="tentang" class="reveal">
+      <div class="card about">
+        <h2><i class="ri-user-3-fill"></i> Tentang Saya</h2>
+        <p>Saya siswa <b>SMK Negeri 1 Prabumulih</b> jurusan <b>Teknik Kendaraan Ringan (TKR)</b>. Saya menyukai pekerjaan bengkel, mulai dari perawatan rutin hingga menganalisis kerusakan ringan. Saya terbiasa bekerja rapi, teliti, dan selalu mengutamakan keselamatan kerja.</p>
+        <div class="meta">
+          <div class="itm">
+            <div class="muted">Sekolah</div>
+            <b>SMK Negeri 1 Prabumulih</b>
+          </div>
+          <div class="itm">
+            <div class="muted">Program Keahlian</div>
+            <b>Teknik Kendaraan Ringan</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS MEKANIK -->
+    <section id="skills" class="reveal">
+      <div class="card">
+        <h2><i class="ri-settings-5-fill"></i> Keahlian Mekanik</h2>
+        <div class="row muted" style="margin-bottom:8px"><small>Berbasis pembelajaran di sekolah & praktik bengkel.</small></div>
+        <div class="skills">
+          <div class="skill" data-level="1">
+            <b>Servis Berkala</b>
+            <small>Oli, filter, inspeksi umum</small>
+            <div class="meter"><div class="bar"></div></div>
+          </div>
+          <div class="skill" data-level="1">
+            <b>Tune Up Mesin</b>
+            <small>Busi, celah katup, karburasi/injeksi dasar</small>
+            <div class="meter"><div class="bar"></div></div>
+          </div>
+          <div class="skill" data-level="1">
+            <b>Sistem Rem & Suspensi</b>
+            <small>Bleeding, kampas, shock</small>
+            <div class="meter"><div class="bar"></div></div>
+          </div>
+          <div class="skill" data-level="1">
+            <b>Kelistrikan Dasar</b>
+            <small>Multimeter, aki, lampu, sekring</small>
+            <div class="meter"><div class="bar"></div></div>
+          </div>
+          <div class="skill" data-level="1">
+            <b>Roda & Ban</b>
+            <small>Bongkar pasang, balancing dasar</small>
+            <div class="meter"><div class="bar"></div></div>
+          </div>
+          <div class="skill" data-level="1">
+            <b>Sistem Pendingin</b>
+            <small>Radiator, coolant, selang</small>
+            <div class="meter"><div class="bar"></div></div>
+          </div>
+          <div class="skill" data-level="1">
+            <b>Sistem Bahan Bakar</b>
+            <small>Filter, throttle body, injektor dasar</small>
+            <div class="meter"><div class="bar"></div></div>
+          </div>
+          <div class="skill" data-level="1">
+            <b>Alat Ukur & Torsi</b>
+            <small>Kunci momen, feeler gauge</small>
+            <div class="meter"><div class="bar"></div></div>
+          </div>
+          <div class="skill" data-level="1">
+            <b>Diagnostik OBD Dasar</b>
+            <small>Baca kode kerusakan</small>
+            <div class="meter"><div class="bar"></div></div>
+          </div>
+        </div>
+        <div style="margin-top:10px" class="muted"><small><i class="ri-shield-check-fill"></i> Selalu mengutamakan K3: APD, SOP bengkel, dan kerapian kerja.</small></div>
+      </div>
+    </section>
+
+    <!-- HOBI (ganti proyek) -->
+    <section id="hobi" class="reveal">
+      <div class="card">
+        <h2><i class="ri-sparkling-2-fill"></i> Hobi</h2>
+        <div class="hobbies">
+          <div class="hobby"><i class="ri-bicycle-fill"></i> <div><b>Bersepeda</b><br><small class="muted">Jelajah kota & latihan stamina</small></div></div>
+          <div class="hobby"><i class="fa-solid fa-futbol"></i> <div><b>Bermain Sepak Bola</b><br><small class="muted">Tim bareng teman sekolah</small></div></div>
+          <div class="hobby"><i class="ri-gamepad-fill"></i> <div><b>Bermain Game</b><br><small class="muted">Seru-seruan & strategi</small></div></div>
+          <div class="hobby"><i class="ri-book-2-fill"></i> <div><b>Membaca</b><br><small class="muted">Artikel otomotif & komik</small></div></div>
+          <div class="hobby"><i class="ri-pencil-ruler-2-fill"></i> <div><b>Menggambar</b><br><small class="muted">Sketsa kendaraan</small></div></div>
+          <div class="hobby"><i class="ri-roadster-fill"></i> <div><b>Otomotif</b><br><small class="muted">Mempelajari ilmu otomotif</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOSMED (ganti email) -->
+    <section id="sosmed" class="reveal">
+      <div class="card">
+        <h2><i class="ri-send-plane-fill"></i> Sosial Media</h2>
+        <div class="socials">
+          <a class="sbtn" href="https://instagram.com/shdqah.adil" target="_blank" rel="noopener">
+            <i class="ri-instagram-fill"></i> Instagram
+          </a>
+          <a class="sbtn" href="https://wa.me/6281373234307" target="_blank" rel="noopener">
+            <i class="ri-whatsapp-fill"></i> WhatsApp
+          </a>
+          <a class="sbtn" href="https://tiktok.com/@dilz.87" target="_blank" rel="noopener">
+            <i class="ri-tiktok-fill"></i> TikTok
+          </a>
+          <a class="sbtn" href="https://t.me/kael_87" target="_blank" rel="noopener">
+            <i class="ri-telegram-fill"></i> Telegram
+          </a>
+          <a class="sbtn" href="shadiqah13@gmail.com" target="_blank" rel="noopener">
+            <i class="ri-mail-fill"></i> Gmail
+          </a>
+          <a class="sbtn" href="#home">
+            <i class="ri-arrow-up-circle-fill"></i> Kembali ke Atas
+          </a>
+        </div>
+        <div class="row muted" style="margin-top:10px">
+          <small>© copyright - <b>kael</b>.</small>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="bnav card">
+    <a href="#home" class="active" data-nav><i class="ri-home-5-line"></i><br><small>Home</small></a>
+    <a href="#skills" data-nav><i class="ri-tools-line"></i><br><small>Keahlian</small></a>
+    <a href="#hobi" data-nav><i class="ri-star-smile-line"></i><br><small>Hobi</small></a>
+    <a href="#sosmed" data-nav><i class="ri-share-line"></i><br><small>Sosmed</small></a>
+  </div>
+
+  <script>
+    // ====== Typing Effect ======
+    const roles = [
+      'Saya bersekolah di SMK Negeri 1 Prabumulih',
+      'Jurusan Teknik Kendaraan Ringan',
+      'Kelas X TKR 1',
+      'Siap Belajar & Berproses Setiap Hari'
+    ];
+    const target = document.getElementById('typewriter');
+    let r = 0, c = 0, del = false;
+    function type(){
+      const text = roles[r];
+      if(!del){
+        target.textContent = text.slice(0, ++c);
+        if(c === text.length){ del = true; setTimeout(type, 1200); return; }
+      }else{
+        target.textContent = text.slice(0, --c);
+        if(c === 0){ del = false; r = (r+1)%roles.length; }
+      }
+      setTimeout(type, del ? 30 : 55);
+    }
+    type();
+
+    // ====== Reveal on Scroll ======
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // ====== Bottom Nav Active State ======
+    const links = document.querySelectorAll('[data-nav]');
+    const sections = [...links].map(a => document.querySelector(a.getAttribute('href')));
+    const spy = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          const id = '#' + e.target.id;
+          links.forEach(l=> l.classList.toggle('active', l.getAttribute('href')===id));
+        }
+      })
+    }, {threshold:.6});
+    sections.forEach(s=> s && spy.observe(s));
+
+    // ====== Smooth Scroll ======
+    links.forEach(a=>{
+      a.addEventListener('click', (ev)=>{
+        ev.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+
+    // ====== Animate Skill Bars When Visible ======
+    const bars = document.querySelectorAll('.skill');
+    const barObs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          const lvl = e.target.dataset.level || 60;
+          const bar = e.target.querySelector('.bar');
+          bar.style.transition = 'width 1.2s cubic-bezier(.2,.8,.2,1)';
+          requestAnimationFrame(()=> bar.style.width = lvl + '%');
+          barObs.unobserve(e.target);
+        }
+      });
+    }, {threshold:.4});
+    bars.forEach(b=>barObs.observe(b));
+
+    // ====== Subtle parallax blobs ======
+    const b1 = document.querySelector('.blob.b1');
+    const b2 = document.querySelector('.blob.b2');
+    window.addEventListener('mousemove', (e)=>{
+      const x = (e.clientX / window.innerWidth - .5) * 10;
+      const y = (e.clientY / window.innerHeight - .5) * 10;
+      if(b1) b1.style.transform = `translate(${x}px, ${y}px)`;
+      if(b2) b2.style.transform = `translate(${-x}px, ${-y}px)`;
+    });
+  </script>
+</body>
+  </html>
